@@ -8,6 +8,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { history } from 'utils';
 import dashboardReducer from 'features/dashboard/dashboardSlice';
 import studentReducer from 'features/student/studentSlice';
+import cityReducer from 'features/city/citySlice';
 const sagaMiddleware = createSagaMiddleware();
 //add saga
 
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   dashboard: dashboardReducer,
   student: studentReducer,
+  city: cityReducer,
 })
 
 //khởi tạo middleware
