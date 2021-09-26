@@ -1,19 +1,19 @@
-import { call, delay, put, takeEvery, takeLatest } from "@redux-saga/core/effects"
-import { PayloadAction } from "@reduxjs/toolkit"
-import { fetchCount } from "./counterAPI";
-import { increment, incrementBySaga, incrementBySagaSuccess } from "./counterSlice";
+import { delay, put, takeEvery } from "@redux-saga/core/effects";
+import { PayloadAction } from "@reduxjs/toolkit";
+//import { fetchCount } from "./counterAPI";
+import { incrementBySaga, incrementBySagaSuccess } from "./counterSlice";
 
 
 //mỗi lần actions đc dispatch thì làm hành động log ra
-export function* log(action: PayloadAction){
-    console.log('Log', action);
-}
+// export function* log(action: PayloadAction){
+//     console.log('Log', action);
+// }
 
-function * test(){
-    yield fetchCount(2); // trả về promise
+// function * test(){
+//     yield fetchCount(2); // trả về promise
 
-    yield call(fetchCount,2); //báo cho sagaMiddleware thực thi trả về js object
-}
+//     yield call(fetchCount,2); //báo cho sagaMiddleware thực thi trả về js object
+// }
 
 export function* handleIncrementSaga(action: PayloadAction<number>){
     console.log('Waiting 2s', action);

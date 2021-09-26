@@ -1,13 +1,12 @@
 import { Box, Grid, LinearProgress, makeStyles, Typography } from '@material-ui/core';
-import { ChatRounded, ChatSharp, ClearTwoTone, PeopleAlt, PeopleOutline, RateReviewOutlined } from '@material-ui/icons';
+import { ChatSharp, PeopleAlt, PeopleOutline, RateReviewOutlined } from '@material-ui/icons';
 import { useAppDispatch, useAppSelector } from 'app/hooks';
-import React,{ useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
 import StatisticsItem from './components/StatisticsItem';
 import StudentRankingList from './components/StudentRankingList';
 import Widget from './components/Widget';
-
 import { dashboardAction, selectHighestStudentList, selectLoading, selectLowestStudentList, selectRankingByCityList, selectStatistics } from './dashboardSlice';
+
 
 
 const useStyles = makeStyles(theme => ({

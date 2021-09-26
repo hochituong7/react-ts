@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "@redux-saga/core/effects";
+import { call, debounce, put, takeLatest } from "@redux-saga/core/effects";
 import { PayloadAction } from "@reduxjs/toolkit";
 import studentApi from "api/studentApi";
 import { ListParams, listResponse, Student } from "models";
@@ -14,7 +14,15 @@ function* fetchStudentList(action: PayloadAction<ListParams>){
     }
 }
 
+function* handleSearchDebounce(action: PayloadAction<ListParams>){
+    console.log('Debounce');
+    yield put(studentActions.setFilter(action.payload)); //dispatch action setFilter lại
+}
+
 
 export default function* studentSaga(){
     yield takeLatest(studentActions.fetchStudentList,fetchStudentList);
+
+    yield debounce(500, studentActions.setFilterWithDebounce.type,handleSearchDebounce); //sử dụng debounce của saga để handle type search
+
 }
