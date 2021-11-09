@@ -8,7 +8,7 @@ function* handleLogin(payload: LoginPayload){
         console.log('Handle login', payload)
         yield delay(500)
         //yield call(api,...)
-        localStorage.setItem('access_token','T2340AFP241AMN22FF2')
+        localStorage.setItem('access_token','T358115794')
 
         //trả về hàm success
         yield put(
