@@ -59,6 +59,7 @@ export default function StudentForm({ initialValues, onSubmit }: IStudentFormPro
   const [error, setError] = useState<string>('');
 
   const cityOptions = useAppSelector(selectCityOptions);
+  console.log(cityOptions);
 
   const handleFormSubmit = async (formValues: Student) => {
     console.log('Submitted: ', formValues);
