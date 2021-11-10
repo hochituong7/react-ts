@@ -42,5 +42,4 @@ helloo
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
  git config --global http.sslBackend "openssl"
  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
- 
  npx browserslist@latest --update-db
